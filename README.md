@@ -25,3 +25,8 @@ To run this project locally, you only need a modern web browser (e.g., Chrome, F
 
    ```bash
    git clone https://github.com/Sai0029/Html_css_JS_bySai.git
+2. **Open the project folder**:
+
+    ```bash
+    cd Html_css_JS_bySai
+3. **Open index.html in your preferred web browser.**
