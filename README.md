@@ -24,4 +24,4 @@ To run this project locally, you only need a modern web browser (e.g., Chrome, F
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/YourUsername/Html_css_JS_bySai.git
+   git clone https://github.com/Sai0029/Html_css_JS_bySai.git
