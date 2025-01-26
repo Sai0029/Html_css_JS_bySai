@@ -1,0 +1,280 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+header {
+    text-align: center;
+    padding: 1rem;
+    background-color: #4CAF50;
+    color: white;
+}
+
+header select,
+header button {
+    margin-left: 0.5rem;
+    font-size: 1rem;
+    padding: 0.25rem 0.5rem;
+    background: none;
+    border: 1px solid white;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+#editor {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.toolbar {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+textarea {
+    width: 100%;
+    height: 150px;
+    font-family: monospace;
+    font-size: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    resize: none;
+}
+
+.CodeMirror {
+    height: 150px;
+    border: 1px solid #ccc;
+}
+
+#preview {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+#output-frame {
+    width: 100%;
+    height: 800px;
+    border: 1px solid #ccc;
+}
+
+#html-validation-errors {
+    margin-top: 0.5rem;
+    color: red;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    font-size: 14px;
+}
+
+footer a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #333;
+    color: white;
+}
+
+body.dark-mode header {
+    background-color: #222;
+}
+
+body.dark-mode button {
+    background-color: #555;
+}
+
+body.dark-mode button:hover {
+    background-color: #666;
+}
+
+body.dark-mode #output-frame {
+    border: 1px solid #555;
+}
+
+.upload-label {
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.upload-label:hover {
+    background-color: #0056b3;
+}
+
+#theme-selector {
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Hover and focus styles for the dropdown */
+#theme-selector:focus,
+#theme-selector:hover {
+    background-color: #f0f0f0;
+}
+
+body.dark-mode #theme-selector {
+    background-color: #333333;
+    color: #ffffff;
+    border-color: #555555;
+}
+
+body.dark-mode #theme-selector:focus,
+body.dark-mode #theme-selector:hover {
+    background-color: #444444;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    margin: 5px;
+}
+
+button:hover {
+    background-color: #0056b3;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:active {
+    background-color: #00408a;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+#validate-html {
+    background-color: #28a745;
+}
+
+#validate-html:hover {
+    background-color: #218838;
+}
+
+#format-code {
+    background-color: #ffc107;
+    color: black;
+}
+
+#format-code:hover {
+    background-color: #e0a800;
+}
+
+#download {
+    background-color: #17a2b8;
+}
+
+#download:hover {
+    background-color: #117a8b;
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    #editor,
+    #preview {
+        flex: none;
+        width: 100%;
+    }
+
+    #output-frame {
+        height: 400px; /* Reduce the size of the preview iframe on mobile */
+    }
+
+    .upload-label {
+        font-size: 14px;
+    }
+
+    /* Warning message to switch to landscape mode */
+    .landscape-warning {
+        background-color: rgba(0, 0, 0, 0.8);
+        color: white;
+        padding: 20px 30px;
+        border-radius: 10px;
+        font-size: 20px;
+        font-weight: bold;
+        opacity: 0;
+        animation: fadeIn 3s forwards, bounceIn 2s 3s forwards; /* Apply animations */
+      }
+      
+      /* Animation: Fade In and Bounce */
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      
+      @keyframes bounceIn {
+        0% {
+          transform: translateY(-100px);
+          opacity: 0;
+        }
+        60% {
+          transform: translateY(10px);
+          opacity: 1;
+        }
+        80% {
+          transform: translateY(-5px);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
+      
+      /* Hide the landscape warning when in landscape mode */
+      @media (orientation: landscape) {
+        #landscape-warning {
+          display: none; /* Hide warning in landscape mode */
+        }
+      }

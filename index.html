@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Code Editor</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.14/codemirror.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.14/theme/dracula.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.14/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.14/mode/xml/xml.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.14/mode/css/css.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.14/mode/javascript/javascript.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.14.7/beautify.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.14.7/beautify-css.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.14.7/beautify-html.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.0/dist/jszip.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>HTML_CSSS_JS_PLAYGROUND</h1>
+    <div id="landscape-warning" class="landscape-warning">
+        Please switch to landscape mode for better viewing.
+      </div>   
+    <div>
+      <label for="theme-selector">Theme:</label>
+      <select id="theme-selector">
+        <option value="default">Default</option>
+        <option value="dracula">Dracula</option>
+      </select>
+      <button id="toggle-theme">Toggle Dark Mode</button>
+    </div>
+  </header>
+  <main>
+    <section id="editor">
+      <div class="toolbar">
+        <button id="validate-html">Validate HTML</button>
+        <button id="format-code">Format Code</button>
+        <button id="download">Download All</button>
+        <button><label for="file-upload" class="upload-label">Upload Files</label></button>
+        <input type="file" id="file-upload" accept=".html,.css,.js" multiple hidden>
+      </div>
+      <div class="code-editor">
+        <h2>HTML</h2>
+        <textarea id="html-editor"></textarea>
+        <div id="html-validation-errors"></div>
+      </div>
+      <div class="code-editor">
+        <h2>CSS</h2>
+        <textarea id="css-editor"></textarea>
+      </div>
+      <div class="code-editor">
+        <h2>JavaScript</h2>
+        <textarea id="js-editor"></textarea>
+        <div id="js-errors"></div>
+      </div>
+    </section>
+    <section id="preview">
+      <h2>Live Output</h2>
+      <iframe id="output-frame"frameborder="0"></iframe>
+    </section>
+  </main>
+  <footer>
+    <p>© HTML_CSS_JS Code Editor</p>
+    <p>Created by Sai Krishna Nagineni | <a href="mailto:nsai0029@gmail.com">nsai0029@gmail.com</a></p>
+</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
